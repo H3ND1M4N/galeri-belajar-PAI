@@ -1,0 +1,13 @@
+Galeri Belajar PAI (versi unggah langsung, tanpa login)
+
+Isi folder:
+- public/index.html            : halaman galeri
+- netlify/functions/items.mts  : simpan, daftar, dan hapus karya (hapus butuh sandi admin)
+- netlify/functions/file.mts   : menampilkan file yang diunggah
+- netlify.toml, package.json
+
+Syarat saat dipasang di Netlify:
+1. Buat variabel lingkungan bernama ADMIN_PASSWORD berisi sandi admin (cakupan: Functions).
+2. Pasang dari folder ini lewat deploy berbasis build (Git atau Netlify CLI), supaya paket
+   @netlify/blobs dan @netlify/functions terpasang otomatis.
+Batas: file unggahan maksimal 4 MB; video lebih besar ditautkan dari YouTube.
