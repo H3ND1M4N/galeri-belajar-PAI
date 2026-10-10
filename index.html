@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Galeri Belajar PAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark;
+--bg:#000;--card:#0e0f0f;--ink:#f6f6f4;--mute:#a9b4b0;--em:#2ee6a6;--em2:#10261f;--gold:#ffc94d;--gold2:#2a2008;--line:#262a29;--onem:#001a12}
+html{height:100%}*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Lexend,system-ui,sans-serif}
+header{background:#000;color:#f6f6f4;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.1) 1px,transparent 0),radial-gradient(ellipse at 50% 0,rgba(46,230,166,.22),transparent 65%);background-size:18px 18px,100% 100%;padding:34px 0 26px;border-bottom:1px solid var(--line)}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+.ar{font-family:Amiri,serif;font-size:2.4rem;color:var(--gold);margin:0;direction:rtl;line-height:1.3}
+h1{margin:0 0 6px;font-size:1.6rem}header p{margin:0;color:#c9d3cf;max-width:58ch}
+main{padding:22px 0 60px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.sp{flex:1}
+.chip,.btn{font:600 .9rem Lexend,sans-serif;border-radius:99px;padding:8px 16px;cursor:pointer;border:1.5px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;display:inline-block}
+.chip[aria-pressed=true]{background:var(--em);border-color:var(--em);color:var(--onem)}
+.btn{background:var(--em);border-color:var(--em);color:var(--onem);border-radius:10px}
+.btn.alt{background:var(--em2);border-color:var(--em2);color:var(--ink)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 0 16px;display:flex;flex-direction:column;gap:8px;overflow:hidden;transition:border-color .2s,transform .2s}.card:hover{border-color:var(--em);transform:translateY(-3px)}.card>:not(.thumb){margin-left:16px;margin-right:16px}
+.card h3{margin:0;font-size:1.05rem;line-height:1.35}
+.card p{margin:0;color:var(--mute);font-size:.92rem;overflow-wrap:anywhere}
+.tag{align-self:flex-start;background:var(--gold2);color:var(--gold);border-radius:6px;padding:1px 9px;font-size:.8rem;font-weight:600}
+.by{font-size:.82rem;color:var(--mute)}
+.acts{margin-top:auto;padding-top:6px}
+input,select,textarea{font:inherit;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%;min-width:0}
+input[type=search]{flex:1 1 200px;width:auto}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:20px;display:none;gap:12px}
+.panel.on{display:grid}
+label{display:grid;gap:4px;font-weight:600;font-size:.9rem}
+.empty{text-align:center;color:var(--mute);padding:40px 10px;border:1.5px dashed var(--line);border-radius:14px}
+.small{font-size:.88rem;color:var(--mute);margin:0}
+footer{border-top:1px solid var(--line);padding:16px 0 30px;color:var(--mute);font-size:.86rem}
+.thumb{height:140px;display:grid;place-items:center;margin-bottom:4px;border-bottom:1px solid var(--line)}
+.thumb svg{width:100%;height:100%}
+.t-semut{background:radial-gradient(circle at 50% 120%,#1f6b3a,#06210f 70%)}
+.t-tangan{background:radial-gradient(circle at 50% 120%,#1d4f9c,#071630 70%)}
+.t-tikus{background:radial-gradient(circle at 50% 120%,#7a4a1e,#1f1206 70%)}
+.t-video{background:radial-gradient(circle at 50% 120%,#9c1d3a,#2a0711 70%)}
+.t-materi{background:radial-gradient(circle at 50% 120%,#8a6a12,#241a03 70%)}
+.t-mario{background:radial-gradient(circle at 50% 120%,#2f7bff,#071a3d 70%)}
+.t-gelembung{background:radial-gradient(circle at 50% 120%,#0f7ea8,#03182a 70%)}
+.t-game{background:radial-gradient(circle at 50% 120%,#5b2d9c,#150a2a 70%)}
+.walk{animation:walk 5s linear infinite}@keyframes walk{0%{transform:translateX(-60px)}100%{transform:translateX(260px)}}
+.leg{transform-box:fill-box;transform-origin:top center;animation:leg .35s ease-in-out infinite alternate}.leg:nth-child(even){animation-delay:.17s}
+@keyframes leg{from{transform:rotate(-22deg)}to{transform:rotate(22deg)}}
+.wave{transform-box:fill-box;transform-origin:50% 100%;animation:wave 1.4s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(16deg)}}
+.pop{animation:pop 2.2s ease-in-out infinite}@keyframes pop{0%,100%{transform:translateY(46px)}35%,65%{transform:translateY(0)}}
+.beat{transform-box:fill-box;transform-origin:center;animation:beat 1.6s ease-in-out infinite}@keyframes beat{50%{transform:scale(1.15)}}
+.flip{transform-box:fill-box;transform-origin:left center;animation:flip 2.4s ease-in-out infinite}@keyframes flip{0%,100%{transform:scaleX(1)}50%{transform:scaleX(-1)}}
+.bump{animation:bump 1.6s ease-in-out infinite}@keyframes bump{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-14px)}}
+.walk2{animation:walk2 4s ease-in-out infinite alternate}@keyframes walk2{from{transform:translateX(0)}to{transform:translateX(130px)}}
+.up1{animation:up 3.2s ease-in infinite}.up2{animation:up 4s ease-in infinite .8s}.up3{animation:up 2.8s ease-in infinite 1.4s}@keyframes up{0%{transform:translateY(40px);opacity:0}20%{opacity:1}100%{transform:translateY(-110px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.up1,.up2,.up3{animation:none}.bump,.walk2{animation:none}.walk,.leg,.wave,.pop,.beat,.flip{animation:none}}
+
+.up-note{font-size:.85rem;color:var(--mute);margin:0}
+.media{width:100%;max-height:240px;object-fit:cover;background:#000;display:block;border-bottom:1px solid var(--line)}
+.btn.del{background:transparent;border-color:#ff6b5e;color:#ff6b5e;padding:6px 12px}
+.btn.rep{background:transparent;border-color:var(--line);color:var(--mute);padding:6px 12px;font-weight:400}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+footer button{background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+.msg{min-height:1.4em;font-size:.9rem;color:var(--mute)}
+</style></head>
+<body>
+<header><div class="wrap">
+<h1>Galeri Belajar PAI</h1>
+<p>Game, video, dan materi Pendidikan Agama Islam. Buka dan mainkan langsung. Siapa pun boleh menambahkan karya, tanpa login.</p>
+</div></header>
+<main class="wrap">
+<div class="bar" id="filter"></div>
+<div class="bar"><input type="search" id="cari" placeholder="Cari judul atau deskripsi" aria-label="Cari karya"><button class="btn alt" id="kirimBtn">Tambah karya</button></div>
+
+<form class="panel" id="pKirim" onsubmit="return false">
+ <p class="small">Isi data karyamu. Karya langsung tampil di galeri setelah disimpan.</p>
+ <label>Nama pengirim<input id="kNama" maxlength="60" autocomplete="name"></label>
+ <label>Judul<input id="kJudul" maxlength="90" required></label>
+ <label>Jenis<select id="kJenis"><option value="game">Game</option><option value="video">Video</option><option value="materi">Materi</option></select></label>
+ <label>Tautan (game, YouTube, Google Drive, dll.)<input id="kLink" type="url" placeholder="https://..."></label>
+ <label>Atau unggah file<input id="kFile" type="file" accept="video/mp4,video/webm,application/pdf,image/png,image/jpeg,image/gif,image/webp"></label>
+ <p class="up-note">File maksimal 4 MB (mp4, webm, pdf, gambar). Video yang lebih besar: unggah ke YouTube, lalu tempel tautannya.</p>
+ <label>Deskripsi singkat<textarea id="kDesk" rows="2" maxlength="300"></textarea></label>
+ <input class="hp" id="kWeb" tabindex="-1" autocomplete="off" aria-hidden="true">
+ <div class="bar" style="margin:0"><button class="btn" id="kSimpan" type="submit">Simpan karya</button><span class="msg" id="kMsg" aria-live="polite"></span></div>
+</form>
+
+<div class="grid" id="grid"></div>
+</main>
+<footer><div class="wrap">Tautan membuka situs lain di tab baru. Gunakan hanya konten yang aman dan sesuai untuk pelajar. Lihat karya yang tidak pantas? Tekan “Lapor”. <button id="admBtn" type="button">Admin</button></div></footer>
+
+<script>
+const KONTAK={wa:"6283834225296",email:"hendy.hf@gmail.com"};
+const DATA=[
+ {judul:"Ant Smasher Kuis",jenis:"game",ikon:"semut",link:"https://tekan-semut.netlify.app/",deskripsi:"Tekan semut yang membawa jawaban benar sebelum waktu habis. Ada mode solo dan duel, empat arena, dan bank soal yang bisa diatur sendiri.",nama:"Hendy Firmansyah"},
+ {judul:"Game PAI SD: Gestur Tangan",jenis:"game",ikon:"tangan",link:"https://game-tangan1.netlify.app/",deskripsi:"Game edukasi interaktif mencocokkan soal dan jawaban materi PAI SD dengan gerakan tangan di depan kamera (Google MediaPipe). Izinkan akses kamera saat diminta.",nama:"Hendy Firmansyah"},
+ {judul:"Pukul Tikus Edisi Belajar",jenis:"game",ikon:"tikus",link:"https://mouse-smasher.netlify.app/",deskripsi:"Pukul tikus yang membawa jawaban benar. Ada mode solo dan duel 1 lawan 1, dan soal bisa ditambah lewat menu Pengaturan Soal.",nama:"Hendy Firmansyah"},
+ {judul:"Gelembung PAI",jenis:"game",ikon:"gelembung",link:"https://gelembungpai.netlify.app/",deskripsi:"Game edukasi PAI SD dengan gelembung air 3D untuk layar papan interaktif atau kamera (pelacakan tangan MediaPipe). Ada mode solo dan duel. Izinkan akses kamera jika diminta.",nama:"Hendy Firmansyah"}
+];
+const IKON={
+semut:`<svg viewBox="0 0 200 140" aria-hidden="true"><g class="walk"><g stroke="#e9ffe9" stroke-width="3" stroke-linecap="round" fill="none"><path class="leg" d="M92 80l-12 18"/><path class="leg" d="M100 82v22"/><path class="leg" d="M108 80l12 18"/></g><circle cx="78" cy="70" r="13" fill="#1a1a1a" stroke="#2ee6a6" stroke-width="2"/><circle cx="100" cy="72" r="11" fill="#1a1a1a" stroke="#2ee6a6" stroke-width="2"/><circle cx="126" cy="68" r="9" fill="#1a1a1a" stroke="#2ee6a6" stroke-width="2"/><circle cx="130" cy="66" r="2" fill="#fff"/><path d="M132 60q8-10 14-8M130 59q2-12 8-14" stroke="#e9ffe9" stroke-width="2.5" fill="none" stroke-linecap="round"/></g></svg>`,
+tangan:`<svg viewBox="0 0 200 140" aria-hidden="true"><g class="wave" fill="#ffd9a8" stroke="#8a5a2b" stroke-width="2"><rect x="82" y="62" width="40" height="52" rx="16"/><rect x="82" y="30" width="9" height="42" rx="4.5"/><rect x="93" y="22" width="9" height="48" rx="4.5"/><rect x="104" y="26" width="9" height="44" rx="4.5"/><rect x="115" y="36" width="8" height="38" rx="4"/><rect x="66" y="62" width="9" height="30" rx="4.5" transform="rotate(-35 70 62)"/></g></svg>`,
+tikus:`<svg viewBox="0 0 200 140" aria-hidden="true"><g class="pop"><path d="M138 100q30 0 22-28" stroke="#f0b6c0" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="100" cy="92" rx="38" ry="30" fill="#b9b2ad"/><circle cx="72" cy="62" r="12" fill="#c9a0a8"/><circle cx="104" cy="58" r="12" fill="#c9a0a8"/><circle cx="82" cy="84" r="3.5" fill="#111"/><circle cx="100" cy="84" r="3.5" fill="#111"/><ellipse cx="91" cy="94" rx="5" ry="3.5" fill="#f08aa0"/></g><ellipse cx="100" cy="128" rx="58" ry="14" fill="#2b1708" stroke="#7a4a1e" stroke-width="3"/></svg>`,
+video:`<svg viewBox="0 0 200 140" aria-hidden="true"><circle class="beat" cx="100" cy="70" r="38" fill="#ff4d6d"/><path d="M90 52v36l30-18z" fill="#fff"/></svg>`,
+materi:`<svg viewBox="0 0 200 140" aria-hidden="true"><path d="M100 36q-30-14-62-8v76q32-6 62 8z" fill="#ffc94d"/><path d="M100 36q30-14 62-8v76q-32-6-62 8z" fill="#e0a82e"/><g class="flip"><path d="M100 36q30-14 62-8v76q-32-6-62 8z" fill="#fff3c9"/></g></svg>`,
+mario:`<svg viewBox="0 0 200 140" aria-hidden="true"><rect x="0" y="108" width="200" height="32" fill="#7a4a1e"/><rect x="0" y="108" width="200" height="8" fill="#3fbf4f"/><g class="bump"><rect x="78" y="34" width="44" height="44" rx="4" fill="#ffc94d" stroke="#7a5a00" stroke-width="4"/><text x="100" y="67" text-anchor="middle" font-size="30" font-weight="700" fill="#7a4a00" font-family="Lexend,sans-serif">?</text></g><g class="walk2"><path d="M20 108a14 14 0 0128 0z" fill="#e8372c"/><rect x="20" y="108" width="28" height="0" fill="#fff"/><circle cx="30" cy="100" r="3" fill="#fff"/><circle cx="40" cy="98" r="3" fill="#fff"/></g></svg>`,
+gelembung:`<svg viewBox="0 0 200 140" aria-hidden="true"><g fill="rgba(120,220,255,.25)" stroke="#9be8ff" stroke-width="3"><circle class="up1" cx="62" cy="100" r="22"/><circle class="up2" cx="104" cy="104" r="30"/><circle class="up3" cx="148" cy="98" r="18"/></g><g fill="#fff" opacity=".8"><circle class="up1" cx="55" cy="92" r="5"/><circle class="up2" cx="92" cy="94" r="7"/><circle class="up3" cx="143" cy="92" r="4"/></g></svg>`,
+game:`<svg viewBox="0 0 200 140" aria-hidden="true"><g class="beat"><rect x="52" y="48" width="96" height="48" rx="24" fill="#8b5cf6"/><path d="M76 62v20M66 72h20" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="122" cy="66" r="5" fill="#ffc94d"/><circle cx="134" cy="78" r="5" fill="#2ee6a6"/></g></svg>`};
+
+const $=s=>document.querySelector(s);
+const JENIS={game:"Game",video:"Video",materi:"Materi"};
+let filter="semua",UP=[],pw="";
+try{pw=sessionStorage.getItem("adm")||""}catch(e){}
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const okUrl=u=>/^https?:\/\//i.test(u||"");
+const safeFile=u=>/^\/api\/file\/[0-9a-f-]{36}$/.test(u||"");
+
+function renderFilter(){$("#filter").innerHTML=[["semua","Semua"],...Object.entries(JENIS)].map(([k,v])=>`<button class="chip" data-k="${k}" aria-pressed="${filter==k}">${v}</button>`).join("")}
+$("#filter").onclick=e=>{const b=e.target.closest(".chip");if(b){filter=b.dataset.k;renderFilter();render()}};
+$("#cari").oninput=render;
+function thumb(i){const k=IKON[i.ikon]?i.ikon:(IKON[i.jenis]?i.jenis:"game");return `<div class="thumb t-${k}">${IKON[k]}</div>`}
+function media(i){
+ if(i.fileUrl&&safeFile(i.fileUrl)){
+  if(String(i.fileType).startsWith("video/"))return `<video class="media" controls preload="metadata" src="${esc(i.fileUrl)}"></video>`;
+  if(String(i.fileType).startsWith("image/"))return `<img class="media" src="${esc(i.fileUrl)}" alt="${esc(i.judul)}" loading="lazy">`}
+ return thumb(i)}
+function render(){
+ const q=$("#cari").value.toLowerCase();
+ const all=[...UP.map(x=>({...x,up:1})),...DATA];
+ const list=all.filter(i=>(filter=="semua"||i.jenis==filter)&&(i.judul+" "+(i.deskripsi||"")).toLowerCase().includes(q));
+ $("#grid").innerHTML=list.length?list.map(i=>{
+  let a="";
+  if(okUrl(i.link))a+=`<a class="btn" href="${esc(i.link)}" target="_blank" rel="noopener noreferrer">${i.jenis=="game"?"Mainkan":i.jenis=="video"?"Tonton":"Buka"}</a>`;
+  if(i.fileUrl&&safeFile(i.fileUrl)&&!String(i.fileType).startsWith("video/")&&!String(i.fileType).startsWith("image/"))a+=`<a class="btn" href="${esc(i.fileUrl)}" target="_blank" rel="noopener">Buka file</a>`;
+  if(i.up){const t=encodeURIComponent("Assalamu'alaikum, saya ingin melaporkan karya di Galeri PAI: "+i.judul);a+=`<a class="btn rep" href="https://wa.me/${KONTAK.wa}?text=${t}" target="_blank" rel="noopener">Lapor</a>`;
+   if(pw)a+=`<button class="btn del" data-del="${esc(i.id)}">Hapus</button>`}
+  return `<article class="card">${media(i)}<span class="tag">${esc(JENIS[i.jenis]||"Karya")}</span><h3>${esc(i.judul)}</h3><p>${esc(i.deskripsi)}</p><div class="by">Oleh ${esc(i.nama||"Guru")}</div><div class="acts">${a}</div></article>`}).join("")
+ :`<div class="empty" style="grid-column:1/-1">Tidak ada karya yang cocok. Coba kata kunci lain atau tambahkan karyamu.</div>`}
+
+async function muat(){try{const r=await fetch("/api/items");if(r.ok)UP=await r.json()}catch(e){}render()}
+
+$("#kirimBtn").onclick=()=>{$("#pKirim").classList.toggle("on");$("#kJudul").focus()};
+$("#pKirim").onsubmit=async e=>{
+ e.preventDefault();const m=$("#kMsg");
+ const judul=$("#kJudul").value.trim(),link=$("#kLink").value.trim(),f=$("#kFile").files[0];
+ if(!judul){m.textContent="Judul wajib diisi.";return}
+ if(!link&&!f){m.textContent="Isi tautan atau pilih file.";return}
+ if(link&&!okUrl(link)){m.textContent="Tautan harus diawali https://";return}
+ if(f&&f.size>4*1024*1024){m.textContent="File lebih dari 4 MB. Unggah ke YouTube atau Drive, lalu tempel tautannya.";return}
+ const fd=new FormData();
+ fd.append("judul",judul);fd.append("jenis",$("#kJenis").value);fd.append("link",link);fd.append("deskripsi",$("#kDesk").value.trim());fd.append("nama",$("#kNama").value.trim());fd.append("website",$("#kWeb").value);
+ if(f)fd.append("file",f);
+ $("#kSimpan").disabled=true;m.textContent="Menyimpan...";
+ try{const r=await fetch("/api/items",{method:"POST",body:fd});const j=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error(j.error||"Gagal menyimpan. Coba lagi.");
+  $("#pKirim").reset();m.textContent="Tersimpan. Karyamu sudah tampil di galeri.";$("#pKirim").classList.remove("on");await muat()}
+ catch(err){m.textContent=err.message}
+ $("#kSimpan").disabled=false};
+
+$("#grid").onclick=async e=>{
+ const b=e.target.closest("[data-del]");if(!b||!pw)return;
+ const it=UP.find(x=>x.id==b.dataset.del);
+ if(!confirm(`Hapus “${it?it.judul:"karya ini"}”? Tindakan ini permanen.`))return;
+ try{const r=await fetch("/api/items?id="+encodeURIComponent(b.dataset.del),{method:"DELETE",headers:{"x-admin-password":pw}});
+  if(!r.ok)throw 0;await muat()}catch(_){alert("Gagal menghapus. Cek kata sandi admin.")}};
+$("#admBtn").onclick=async()=>{
+ if(pw){pw="";try{sessionStorage.removeItem("adm")}catch(e){}$("#admBtn").textContent="Admin";render();return}
+ const p=prompt("Kata sandi admin:");if(!p)return;
+ try{const r=await fetch("/api/admin",{method:"POST",headers:{"x-admin-password":p}});
+  if(!r.ok)throw 0;pw=p;try{sessionStorage.setItem("adm",p)}catch(e){}$("#admBtn").textContent="Keluar admin";render()}
+ catch(_){alert("Kata sandi salah.")}};
+if(pw)$("#admBtn").textContent="Keluar admin";
+renderFilter();muat();
+</script></body></html>
